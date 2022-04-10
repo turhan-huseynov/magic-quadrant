@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CHART_SIZE } from "../constants";
 import { DARK_GREY, LIGHT_GREY, LIGHT_BLUE, WHITE } from "../colorCodes";
 
 export const QuadrantWrapper = styled.div<{
@@ -10,7 +11,7 @@ export const QuadrantWrapper = styled.div<{
 }>`
     position: relative;
     min-width: 100px;
-    width: 200px;
+    width: ${CHART_SIZE / 2}px;
     aspect-ratio: 1;
     border: 1px solid ${LIGHT_GREY};
     background: ${WHITE};

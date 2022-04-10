@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { GRAPH_MIN, GRAPH_MAX } from "../constants";
+import { GRAPH_MIN, GRAPH_MAX, CHART_SIZE } from "../constants";
 import Tooltip from "./Tooltip";
 import { Coord, Label } from "./marker-style";
 
@@ -17,8 +17,8 @@ function Marker(props: any) {
         let x = e.pageX - offsetX,
             y = e.pageY - offsetY;
         props.handleCoordinateUpdate(props.index, x, y);
-        coordRef.current.style.setProperty("bottom", (props.defaultBottom - y) / 4 + "%");
-        coordRef.current.style.setProperty("left", (x - props.defaultLeft) / 4 + "%");
+        coordRef.current.style.setProperty("bottom", (props.defaultBottom - y) / (CHART_SIZE / 100) + "%");
+        coordRef.current.style.setProperty("left", (x - props.defaultLeft) / (CHART_SIZE / 100) + "%");
     };
     const dragStartHandler = (e: any) => {
         e.dataTransfer.effectAllowed = "copyMove";

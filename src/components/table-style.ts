@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { GRAPH_MIN, GRAPH_MAX } from "../constants";
+import { GRAPH_MIN, GRAPH_MAX, CHART_SIZE } from "../constants";
+import { DARK_GREY, LIGHT_GREY, LIGHT_BLUE, WHITE } from "../colorCodes";
 
 export const TableWrapper = styled.div`
     overflow: auto;
     height: 100%;
     min-height: 150px;
-    max-height: 400px;
+    max-height: ${CHART_SIZE}px;
 `;
 export const Row = styled.div`
     display: grid;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { CHART_SIZE } from "./constants";
 import { DARK_GREY, LIGHT_GREY, WHITE } from "./colorCodes";
 
 export const Logo = styled.img`
@@ -38,7 +39,7 @@ export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 8px;
-    height: 400px;
+    height: ${CHART_SIZE}px;
     width: 80vw;
     align-items: start;
 

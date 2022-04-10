@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { CHART_SIZE } from "../constants";
 
 export const GraphWrapper = styled.div`
-    width: 400px;
-    height: 400px;
+    width: ${CHART_SIZE}px;
+    aspect-ratio: 1;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
