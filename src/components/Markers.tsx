@@ -1,6 +1,7 @@
 import { memo, useEffect, useState } from "react";
 import Marker from "./Marker";
 import { CHART_SIZE } from "../constants";
+import { clamp } from "../helpers";
 
 let isDraggingCopy = false;
 
@@ -14,8 +15,8 @@ const Markers = (props: any) => {
     const handleCoordinateUpdate = (index: number, x: number, y: number) => {
         props.tableData.splice(index, 1, {
             ...props.tableData[index],
-            vision: (x - props.defaultLeft) / (CHART_SIZE / 100),
-            ability: (props.defaultBottom - y) / (CHART_SIZE / 100),
+            vision: clamp((x - props.defaultLeft) / (CHART_SIZE / 100), 0, 100),
+            ability: clamp((props.defaultBottom - y) / (CHART_SIZE / 100), 0, 100),
         });
         props.setTableData([...props.tableData]);
     };

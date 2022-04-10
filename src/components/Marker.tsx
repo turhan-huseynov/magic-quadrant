@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { GRAPH_MIN, GRAPH_MAX, CHART_SIZE } from "../constants";
 import Tooltip from "./Tooltip";
 import { Coord, Label } from "./marker-style";
+import { clamp } from "../helpers";
 
 function Marker(props: any) {
     const coordRef = useRef<HTMLDivElement>(null);
@@ -45,8 +46,8 @@ function Marker(props: any) {
     return (
         <Coord
             ref={coordRef}
-            x={Math.max(Math.min(props.rowData.vision, GRAPH_MAX), GRAPH_MIN)}
-            y={Math.max(Math.min(props.rowData.ability, GRAPH_MAX), GRAPH_MIN)}
+            x={clamp(props.rowData.vision, GRAPH_MIN, GRAPH_MAX)}
+            y={clamp(props.rowData.ability, GRAPH_MIN, GRAPH_MAX)}
             isFocussed={props.isFocussed}
             onClick={handleClick}
             onMouseOver={() => setHover(true)}
