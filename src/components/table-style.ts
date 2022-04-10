@@ -18,8 +18,8 @@ export const ThWrapper = styled(Row)`
     top: 0;
 `;
 export const Th = styled.div`
-    background: #adb9c3;
-    color: white;
+    background: ${LIGHT_BLUE};
+    color: ${WHITE};
     text-align: center;
     border-radius: 6px;
     font-size: 12px;
@@ -35,21 +35,21 @@ export const Col = styled.input.attrs((props) => ({
 }))`
     min-width: 70px;
     border-radius: 6px;
-    border: 2px solid #e3e4e7;
+    border: 2px solid ${LIGHT_GREY};
     padding: 2px 4px;
     min-width: 45px;
 `;
 export const Button = styled.button`
-    border: 1px solid #e3e4e7;
+    border: 1px solid ${LIGHT_GREY};
     border-radius: 6px;
-    background: #e3e4e7;
+    background: ${LIGHT_GREY};
 
     &:hover {
-        background: #696969;
+        background: ${DARK_GREY};
     }
     &:active {
-        background: #696969;
-        color: white;
-        border: 1px solid #e3e4e7;
+        background: ${DARK_GREY};
+        color: ${WHITE};
+        border: 1px solid ${LIGHT_GREY};
     }
 `;

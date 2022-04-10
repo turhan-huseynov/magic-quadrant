@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DARK_GREY, LIGHT_GREY, LIGHT_BLUE, WHITE } from "../colorCodes";
 
 export const QuadrantWrapper = styled.div<{
     isTop: boolean;
@@ -11,13 +12,13 @@ export const QuadrantWrapper = styled.div<{
     min-width: 100px;
     width: 200px;
     aspect-ratio: 1;
-    border: 1px solid #e3e4e7;
-    background: white;
+    border: 1px solid ${LIGHT_GREY};
+    background: ${WHITE};
 
-    border-top: ${(props) => (props.isTop ? "2px solid #696969" : "1px solid #e3e4e7")};
-    border-right: ${(props) => (props.isRight ? "2px solid #696969" : "1px solid #e3e4e7")};
-    border-bottom: ${(props) => (props.isBottom ? "2px solid #696969" : "1px solid #e3e4e7")};
-    border-left: ${(props) => (props.isLeft ? "2px solid #696969" : "1px solid #e3e4e7")};
+    border-top: ${(props) => (props.isTop ? `2px solid ${DARK_GREY}` : `1px solid ${LIGHT_GREY}`)};
+    border-right: ${(props) => (props.isRight ? `2px solid ${DARK_GREY}` : `1px solid ${LIGHT_GREY}`)};
+    border-bottom: ${(props) => (props.isBottom ? `2px solid ${DARK_GREY}` : `1px solid ${LIGHT_GREY}`)};
+    border-left: ${(props) => (props.isLeft ? `2px solid ${DARK_GREY}` : `1px solid ${LIGHT_GREY}`)};
 
     border-radius: ${(props) => props.borderRadius};
 `;
@@ -29,8 +30,8 @@ export const Label = styled.div<{ readonly index: number }>`
     transform: translate(-50%);
     top: ${(props) => (props.index < 2 ? "10px" : "auto")};
     bottom: ${(props) => (props.index >= 2 ? "10px" : "auto")};
-    color: white;
-    background: #adb9c3;
+    color: ${WHITE};
+    background: ${LIGHT_BLUE};
     border-radius: 6px;
     font-size: 13px;
     z-index: 1;

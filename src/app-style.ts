@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { DARK_GREY, LIGHT_GREY, WHITE } from "./colorCodes";
 
 export const Logo = styled.img`
     position: absolute;
@@ -53,17 +54,17 @@ export const Button = styled.button`
     border-radius: 50%;
     width: 50px;
     height: 50px;
-    border: 1px solid #e3e4e7;
-    background: #e3e4e7;
+    border: 1px solid ${LIGHT_GREY};
+    background: ${LIGHT_GREY};
     cursor: pointer;
     font-size: 30px;
 
     &:hover {
-        background: #696969;
+        background: ${DARK_GREY};
     }
     &:active {
-        background: #696969;
-        color: white;
-        border: 1px solid #e3e4e7;
+        background: ${DARK_GREY};
+        color: ${WHITE};
+        border: 1px solid ${LIGHT_GREY};
     }
 `;

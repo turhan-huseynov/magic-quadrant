@@ -35,5 +35,5 @@ const Markers = (props: any) => {
     ));
 };
 
-// Updating coordinate during dragging re-renders the component which cancels dragging process. Using memo to prevent re-render. 
+// Updating coordinate during dragging re-renders the component which cancels dragging process. Using memo to prevent re-render.
 export default memo(Markers, () => isDraggingCopy);
