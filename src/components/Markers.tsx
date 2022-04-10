@@ -1,0 +1,39 @@
+import { memo, useEffect, useState } from "react";
+import Marker from "./Marker";
+
+let isDraggingCopy = false;
+
+const Markers = (props: any) => {
+    const [isDragging, setIsDragging] = useState(false);
+
+    useEffect(() => {
+        isDraggingCopy = isDragging;
+    }, [isDragging]);
+
+    const handleCoordinateUpdate = (index: number, x: number, y: number) => {
+        props.tableData.splice(index, 1, {
+            ...props.tableData[index],
+            vision: (x - props.defaultLeft) / 4,
+            ability: (props.defaultBottom - y) / 4,
+        });
+        props.setTableData([...props.tableData]);
+    };
+    return props.tableData?.map((rowData: any, i: number) => (
+        <Marker
+            key={`${rowData.vision}-${rowData.ability}-${i}`}
+            isFocussed={i === props.selected}
+            rowData={rowData}
+            index={i}
+            setSelected={props.setSelected}
+            handleCoordinateUpdate={handleCoordinateUpdate}
+            reRender={() => props.setTableData([...props.tableData])}
+            defaultLeft={props.defaultLeft}
+            defaultBottom={props.defaultBottom}
+            isDragging={isDragging}
+            setIsDragging={setIsDragging}
+        ></Marker>
+    ));
+};
+
+// Updating coordinate during dragging re-renders the component which cancels dragging process. Using memo to prevent re-render. 
+export default memo(Markers, () => isDraggingCopy);
