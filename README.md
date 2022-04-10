@@ -14,7 +14,8 @@ Features:
 - Clicking delete button removes marker from graph and table,
 - Dragging marker updates table,
 - Changing data from table updates graph,
-- Hovering marker shows vision and ability values
+- Hovering marker shows vision and ability values,
+- Colors and graph size could be changed from related constant file
 
 <hr> 
 
