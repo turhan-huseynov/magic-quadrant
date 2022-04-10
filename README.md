@@ -6,9 +6,15 @@ Technologies used: **React**, **styled-components**
 
 Preview:
 
+![](/public/ss.png)
 
 Features:
 
+- Clicking add button at bottom right adds marker to random coordinate,
+- Clicking delete button removes marker from graph and table,
+- Dragging marker updates table,
+- Changing data from table updates graph,
+- Hovering marker shows vision and ability values
 
 <hr> 
 
