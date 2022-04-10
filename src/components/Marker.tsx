@@ -27,6 +27,7 @@ function Marker(props: any) {
         offsetX = e.pageX - e.nativeEvent.offsetX;
         offsetY = e.pageY - e.nativeEvent.offsetY;
         props.setSelected(props.index);
+        // Hide shadow left behind from dragging
         e.dataTransfer.setDragImage(new Image(), 0, 0);
     };
     const dragEndHandler = (e: any) => {
