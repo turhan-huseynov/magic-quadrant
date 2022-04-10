@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { GRAPH_MIN, GRAPH_MAX } from "../constants";
+import Tooltip from "./Tooltip";
 import { Coord, Label } from "./marker-style";
 
 function Marker(props: any) {
@@ -54,6 +55,11 @@ function Marker(props: any) {
             onDragEnd={dragEndHandler}
             onDrag={handleDrag}
         >
+            <Tooltip shouldShow={hover && !props.isDragging}>
+                Vision: {props.rowData.vision}
+                <br />
+                Ability: {props.rowData.ability}
+            </Tooltip>
             <Label x={props.rowData.vision} y={props.rowData.ability} onDrag={(e: any) => e.preventDefault(e)}>
                 {props.rowData.label}
             </Label>
