@@ -7,15 +7,15 @@ import { getUniqueId, randomBetween } from "./helpers";
 
 function App() {
     const [selected, setSelected] = useState<boolean>();
-    const [tableData, setTableData] = useState<{ id: string; label: string; vision: number; ability: number }[] | null>(
+    const [tableData, setTableData] = useState<{ id: string; label: string; vision: number; ability: number, checked: boolean }[] | null>(
         null
     );
 
     useEffect(() => {
         setTableData([
-            { id: getUniqueId(), label: "Microsoft", vision: 36, ability: 80 },
-            { id: getUniqueId(), label: "Google", vision: 82, ability: 55 },
-            { id: getUniqueId(), label: "Amazon", vision: 60, ability: 85 },
+            { id: getUniqueId(), label: "Microsoft", vision: 36, ability: 80, checked: true },
+            { id: getUniqueId(), label: "Google", vision: 82, ability: 55, checked: true },
+            { id: getUniqueId(), label: "Amazon", vision: 60, ability: 85, checked: true },
         ]);
     }, []);
 
@@ -27,6 +27,7 @@ function App() {
                 label: "",
                 vision: randomBetween(GRAPH_MIN, GRAPH_MAX),
                 ability: randomBetween(GRAPH_MIN, GRAPH_MAX),
+                checked: true
             },
         ]);
     };

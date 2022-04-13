@@ -10,7 +10,7 @@ export const TableWrapper = styled.div`
 `;
 export const Row = styled.div`
     display: grid;
-    grid-template-columns: 3fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 9fr 3fr 3fr 3fr;
     gap: 4px;
     margin-bottom: 4px;
 `;

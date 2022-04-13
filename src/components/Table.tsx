@@ -1,4 +1,5 @@
 import { TableWrapper, ThWrapper, Th, Row, Col, Button } from "./table-style";
+import { Checkbox } from "./checkbox-style";
 
 function Table(props: any) {
     const handleChange = (index: number, field: string, value: any) => {
@@ -15,9 +16,15 @@ function Table(props: any) {
         props.setSelected(index);
     };
 
+    const handleCheckToggle = (index: any) => {
+        props.tableData.splice(index, 1, { ...props.tableData[index], checked: !props.tableData[index].checked });
+        props.setTableData([...props.tableData]);
+    };
+
     return (
         <TableWrapper>
             <ThWrapper>
+                <Th></Th>
                 <Th>Label</Th>
                 <Th>Vision</Th>
                 <Th>Ability</Th>
@@ -25,6 +32,7 @@ function Table(props: any) {
             </ThWrapper>
             {props.tableData?.map((rowData: any, i: number) => (
                 <Row key={rowData.id}>
+                    <Checkbox checked={rowData.checked} onClick={() => handleCheckToggle(i)}></Checkbox>
                     <Col
                         value={rowData.label}
                         onChange={(e: any) => handleChange(i, "label", e.target.value)}

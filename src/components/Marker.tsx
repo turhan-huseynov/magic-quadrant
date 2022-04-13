@@ -49,6 +49,7 @@ function Marker(props: any) {
             x={clamp(props.rowData.vision, GRAPH_MIN, GRAPH_MAX)}
             y={clamp(props.rowData.ability, GRAPH_MIN, GRAPH_MAX)}
             isFocussed={props.isFocussed}
+            shouldDisable={props.shouldDisable}
             onClick={handleClick}
             onMouseOver={() => setHover(true)}
             onMouseOut={() => setHover(false)}

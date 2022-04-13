@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import { DARK_BLUE } from "../colorCodes";
 
-export const Coord = styled.div<{ x: number; y: number; isFocussed: boolean }>`
+export const Coord = styled.div<{ x: number; y: number; isFocussed: boolean; shouldDisable: boolean }>`
     position: absolute;
     left: ${(props) => props.x}%;
     bottom: ${(props) => props.y}%;
     width: 15px;
     height: 15px;
     transform: translate(-50%, 50%);
-    background: ${(props) => (props.isFocussed ? "darkred" : DARK_BLUE)};
+    background: ${(props) => (props.shouldDisable ? "gray" : props.isFocussed ? "darkred" : DARK_BLUE)};
     border-radius: 50%;
 
     &:hover {

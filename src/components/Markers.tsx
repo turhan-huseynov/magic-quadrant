@@ -33,6 +33,7 @@ const Markers = (props: any) => {
             defaultBottom={props.defaultBottom}
             isDragging={isDragging}
             setIsDragging={setIsDragging}
+            shouldDisable={!rowData.checked}
         ></Marker>
     ));
 };
