@@ -34,6 +34,7 @@ const Markers = (props: any) => {
             isDragging={isDragging}
             setIsDragging={setIsDragging}
             shouldDisable={!rowData.isChecked}
+            setSelectedWH={props.setSelectedWH}
         ></Marker>
     ));
 };

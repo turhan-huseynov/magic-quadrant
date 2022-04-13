@@ -10,6 +10,7 @@ export const Coord = styled.div<{ x: number; y: number; isFocussed: boolean; sho
     transform: translate(-50%, 50%);
     background: ${(props) => (props.shouldDisable ? "gray" : props.isFocussed ? "darkred" : DARK_BLUE)};
     border-radius: 50%;
+    z-index: 1;
 
     &:hover {
         filter: brightness(1.5);

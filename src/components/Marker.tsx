@@ -20,6 +20,10 @@ function Marker(props: any) {
         props.handleCoordinateUpdate(props.index, x, y);
         coordRef.current.style.setProperty("bottom", (props.defaultBottom - y) / (CHART_SIZE / 100) + "%");
         coordRef.current.style.setProperty("left", (x - props.defaultLeft) / (CHART_SIZE / 100) + "%");
+        props.setSelectedWH({
+            height: props.defaultBottom - y,
+            width: x - props.defaultLeft,
+        });
     };
     const dragStartHandler = (e: any) => {
         e.dataTransfer.effectAllowed = "copyMove";
@@ -37,6 +41,7 @@ function Marker(props: any) {
         offsetX = e.pageX - e.nativeEvent.offsetX;
         offsetY = e.pageY - e.nativeEvent.offsetY;
         props.reRender();
+        props.setSelectedWH({ height: 0, width: 0 });
     };
     const handleClick = (e: any) => {
         e.stopPropagation();
