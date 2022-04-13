@@ -4,6 +4,8 @@ This project is aiming to build a sample of Magic Quadrant graph which you can f
 
 Technologies used: **React**, **styled-components**
 
+You can access sample from: https://magicquadrant.netlify.app/
+
 Preview:
 
 ![](/public/ss.png)
@@ -12,10 +14,11 @@ Features:
 
 - Clicking add button at bottom right adds marker to random coordinate,
 - Clicking delete button removes marker from graph and table,
-- Dragging marker updates table,
+- Dragging marker updates table (also shows sweet red dashed lines),
 - Changing data from table updates graph,
 - Hovering marker shows vision and ability values,
-- Colors and graph size could be changed from related constant file
+- Colors and graph size could be changed from related constant file,
+- Checkboxes enable/disable (turn gray) the nodes
 
 <hr> 
 
@@ -26,10 +29,6 @@ Other commands:
 ### `npm start`
 
 Runs the app in the development mode.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
