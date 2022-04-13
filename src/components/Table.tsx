@@ -17,7 +17,7 @@ function Table(props: any) {
     };
 
     const handleCheckToggle = (index: any) => {
-        props.tableData.splice(index, 1, { ...props.tableData[index], checked: !props.tableData[index].checked });
+        props.tableData.splice(index, 1, { ...props.tableData[index], isChecked: !props.tableData[index].isChecked });
         props.setTableData([...props.tableData]);
     };
 
@@ -32,7 +32,7 @@ function Table(props: any) {
             </ThWrapper>
             {props.tableData?.map((rowData: any, i: number) => (
                 <Row key={rowData.id}>
-                    <Checkbox checked={rowData.checked} onClick={() => handleCheckToggle(i)}></Checkbox>
+                    <Checkbox is-checked={rowData.isChecked} onClick={() => handleCheckToggle(i)}></Checkbox>
                     <Col
                         value={rowData.label}
                         onChange={(e: any) => handleChange(i, "label", e.target.value)}
